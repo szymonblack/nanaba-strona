@@ -65,43 +65,32 @@ Licensed under MIT ( https://github.com/WPTT/webfont-loader/blob/master/LICENSE 
     display: none;
 }
 
-.gwiazdka-glowna {
+.star-main {
 	position: absolute;
 	margin-top: -16%
 }
 
-.telefon2 {
-	position: absolute;
-	width: 45%;
-	margin-bottom: 20%;
-}
-
-.fiolet {
+.star-purple {
 	position: absolute;
 	left: 50%;
 }
 
-.zolty {
+.star-yellow {
 	position: absolute;
 	left: 80%;
 }
 
-.zolty2 {
-	position: absolute;
-	left: 0%;
-}
-
-.zolty3 {
+.star-yellow-v3 {
 	position: absolute;
 	top: 6.8%
 }
 
-.zolty4 {
+.star-yellow-v4 {
 	position: absolute;
 	top: 11%
 }
 
-.zolty5 {
+.star-yellow-v5 {
 	position: absolute;
 	top: 13%
 }
@@ -118,11 +107,7 @@ text-align: center;
 	content: url("https://nanaba.pl/wp-content/uploads/2023/11/ikona2.svg")
 }
 
-.kolumny {
-	margin-bottom: -30% !important
-}
-
-.grupa1 {
+.group1 {
 	margin-top: -10%
 }
 
@@ -131,7 +116,7 @@ text-align: center;
 	margin-top: -2%
 }
 
-.spis-tresci {
+.table-of-contents {
 	margin-left: -6%;
 	margin-top: -5%
 }
@@ -146,15 +131,12 @@ text-align: center;
 		margin-top: -40% !important
 	}
 	
-	.spis-tresci {
+	.table-of-contents {
 		margin-left: -8%
-	}
-	.napisz-przycisk-glowna {
-		margin-left: -46% !important;
 	}
 }
 
-.grupa2 {
+.group2 {
 	margin-top: -2%
 }
 
