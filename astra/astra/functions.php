@@ -184,7 +184,17 @@ require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-filters.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
 
+/**
+ * Nanaba digital functions
+ */
+
 function my_theme_enqueue_styles() {
     wp_enqueue_style( 'my_theme_style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+function add_image_title_attribute( $attr, $attachment, $size ) {
+$attr['title'] = trim(strip_tags( get_post_field('post_title', $attachment->ID ) ));
+return $attr;
+}
+add_filter('wp_get_attachment_image_attributes', 'add_image_title_attribute', 10, 3);
