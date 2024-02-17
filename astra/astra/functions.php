@@ -185,7 +185,7 @@ require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
 
 /**
- * Nanaba digital functions
+ * Nanaba digital functions by Szymon
  */
 
 function my_theme_enqueue_styles() {
