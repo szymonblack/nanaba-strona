@@ -1,3 +1,4 @@
+AddHandler application/x-httpd-php81 php
 # BEGIN LSCACHE
 ## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
 <IfModule LiteSpeed>
@@ -5,6 +6,12 @@ RewriteEngine on
 CacheLookup on
 RewriteRule .* - [E=Cache-Control:no-autoflush]
 RewriteRule \.litespeed_conf\.dat - [F,L]
+
+### marker ASYNC start ###
+RewriteCond %{REQUEST_URI} /wp-admin/admin-ajax\.php
+RewriteCond %{QUERY_STRING} action=async_litespeed
+RewriteRule .* - [E=noabort:1]
+### marker ASYNC end ###
 
 ### marker MOBILE start ###
 RewriteCond %{HTTP_USER_AGENT} Mobile|Android|Silk/|Kindle|BlackBerry|Opera\ Mini|Opera\ Mobi [NC]
@@ -14,10 +21,6 @@ RewriteRule .* - [E=Cache-Control:vary=%{ENV:LSCACHE_VARY_VALUE}+ismobile]
 ### marker CACHE RESOURCE start ###
 RewriteRule wp-content/.*/[^/]*(responsive|css|js|dynamic|loader|fonts)\.php - [E=cache-control:max-age=3600]
 ### marker CACHE RESOURCE end ###
-
-### marker FAVICON start ###
-RewriteRule favicon\.ico$ - [E=cache-control:max-age=86400]
-### marker FAVICON end ###
 
 ### marker WEBP start ###
 RewriteCond %{HTTP_ACCEPT} "image/webp"
